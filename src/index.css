@@ -1,0 +1,123 @@
+@font-face {
+    font-family: "Archivo";
+    src: url(/fonts/Archivo-VariableFont_wdth,wght.ttf);
+}
+@font-face {
+    font-family: "Playfair Italic";
+    src: url(/fonts/PlayfairDisplay-Italic-VariableFont_wght.ttf);
+}
+@font-face {
+    font-family: "Pixelify";
+    src: url(/fonts/PixelifySans-VariableFont_wght.ttf);
+}
+
+:root {
+    /* --main: #0038FF; */
+    --main: #000;
+    --bg: #faf2ef;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+    font-family: "Archivo";
+    font-weight: 300;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-size: 2rem;
+    background-color: var(--bg);
+}
+
+/* === SHARED STYLES === */
+img {
+    object-fit: cover;
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    transition: color .2s ease;
+
+    &:hover {
+        color: var(--main)
+    }
+}
+
+ul {
+    list-style: none;
+}
+
+h1, h2, h3 {
+    font-family: "Archivo";
+}
+
+footer, section {
+    padding: 3rem 7rem 2rem 2rem;
+    position: relative
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+/* === CLASSES === */
+.grid {
+    display: grid;
+    gap: 3rem;
+}
+
+.flex {
+    display: flex;
+    gap: 1.5rem;
+}
+.flex-col {
+    flex-direction: column;
+}
+.center-between {
+    align-items: center;
+    justify-content: space-between;
+}
+.center-center {
+    justify-content: center;
+    align-items: center;
+}
+
+.dropshadow {
+    border: 1px solid var(--linkblue, var(--main));
+    background: #FFF;
+    box-shadow: 6px 6px 0px 0px var(--linkblue, var(--main));
+}
+
+.stickyh2 {
+    position: sticky;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    background-color: var(--bg);
+    padding: 1rem 4rem 1.5rem 2rem;
+    font-size: 4.5rem;
+    -webkit-text-stroke: 1px #000;
+    color: transparent;
+    border-bottom: 1px solid #000;
+    width: calc(100% + 6rem);
+    margin-left: -2rem;
+}
+
+/* * === ANIMATIONS === */
+@keyframes spin {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

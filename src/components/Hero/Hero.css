@@ -1,0 +1,31 @@
+/* === HERO === */
+#hero {
+    height: 100vh;
+    color: var(--main);
+    align-items: center;
+    padding-top: 0;
+
+    h1 {
+        font-size: 6rem;
+    }
+
+    a {
+        position: absolute;
+        right: 10rem;
+    }
+
+    div {
+        position: absolute;
+        top: 2rem;
+        left: 2rem;
+        font-size: 2rem;
+        font-family: "Helvetica";
+        align-items: center;
+        gap: 5px;
+
+        img {
+            height: 30px;
+            animation: spin 10s linear infinite;
+        }
+    }
+}

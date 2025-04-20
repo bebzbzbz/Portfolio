@@ -1,0 +1,27 @@
+/* === FOOTER/CONTACT === */
+footer {
+    padding-block: 20rem 7rem;
+    > a {
+        font-size: 9rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        margin-bottom: 1rem;
+
+        span.italic {
+            font-family: "Playfair Italic";
+            font-weight: 700;
+        }
+
+        &:after {
+            content: "";
+            position: absolute;
+            bottom: 4px;
+            display: block;
+            height: 1px;
+            width: 100%;
+            background-color: #000;
+        }
+    }
+}

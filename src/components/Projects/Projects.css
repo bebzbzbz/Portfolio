@@ -1,0 +1,8 @@
+/* === PROJECTS === */
+#projects {
+    .teasers {
+        grid-template-columns: 1fr 1fr;
+        gap: 10rem;
+        padding-top: 10rem;
+    }
+}

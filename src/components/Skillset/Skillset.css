@@ -1,0 +1,12 @@
+/* === SKILLSET === */
+#skillset {
+    margin-inline: auto;
+
+    article {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* h2 {
+        text-align: right;
+    } */
+}
