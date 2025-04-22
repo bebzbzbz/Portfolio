@@ -3,10 +3,6 @@
     src: url(/fonts/Archivo-VariableFont_wdth,wght.ttf);
 }
 @font-face {
-    font-family: "Orbit";
-    src: url(/fonts/Orbit-Regular.ttf);
-}
-@font-face {
     font-family: "MDIO Italic";
     src: url(/fonts/MDIO-MediumItalic.ttf);
 }
@@ -32,6 +28,7 @@ html {
     font-family: "Archivo";
     font-weight: 300;
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
@@ -86,13 +83,17 @@ h3 {
     font-family: "MDIO", monospace;
 }
 
-footer, section {
-    padding: 1rem 7rem 2rem 2rem;
+footer, section:not(#hero) {
+    padding: 0 9rem 22rem 3rem;
     position: relative
 }
 
 p {
     margin-bottom: 1rem;
+}
+
+b {
+    font-weight: 500;
 }
 
 /* === CLASSES === */
@@ -135,8 +136,8 @@ p {
     color: transparent; */
     border-bottom: 1px solid #000;
     border-top: 1px solid #000;
-    width: calc(100% + 6rem);
-    margin-left: -2rem;
+    width: calc(100% + 8rem);
+    margin-left: -3rem;
 }
 
 .btn {

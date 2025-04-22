@@ -9,7 +9,7 @@ const Hero = () => {
         b: ['*', '=', '?', '§', ';'],
         c: ['¢', '©', 'ç', 'č', 'ċ'],
         d: ['}', '"', '{', '+', '%'],
-        e: ['3', 'ë', 'ē', 'ĕ', 'ė'],
+        e: ['3', 'ë', 'ē', '€', 'ė'],
         f: ['#', '!', '?', '&', ';'],
         g: ['γ', 'ğ', 'ġ', 'ģ', 'ǥ'],
         h: ['η', 'ħ', 'ȟ', 'ĥ', 'ɦ'],
@@ -27,7 +27,7 @@ const Hero = () => {
         t: ['^', 'ť', ':', '/', '$'],
         u: ['υ', 'ü', 'ū', 'ů', 'ű'],
         v: [':', '7', '=', '9', '1'],
-        w: ['#', 'ẁ', 'ẃ', 'ŵ', 'ẅ'],
+        w: ['#', 'ẁ', 'ẃ', '3', 'ẅ'],
         x: ['ξ', 'х', 'ҳ', 'ӽ', 'ӿ'],
         y: ['γ', 'ÿ', 'ý', 'ŷ', 'ƴ'],
         z: ['ζ', 'ż', 'ź', 'ž', 'ƶ']
@@ -50,7 +50,7 @@ const Hero = () => {
                 });
                 currentIndex++;
 
-                if(currentIndex >= symbols.length) {
+                if(currentIndex === symbols.length - 1) {
                     clearInterval(interval)
 
                     setTimeout(() => {
@@ -59,9 +59,9 @@ const Hero = () => {
                             newTitle[index] = originalLetter;
                             return newTitle;
                         })
-                    }, 0);
+                    }, 100);
                 }
-            }, 300);
+            }, 100);
             setTransformedTitle((prev) => {
                 const newTitle = [...prev];
                 newTitle[index] = symbols[currentIndex];
@@ -82,8 +82,8 @@ const Hero = () => {
         <section id='hero' className="flex">
             <h1>{transformedTitle.map((letter, index) => (
                     <motion.span 
-                    initial={{ opacity: 0}}
-                    whileInView={{opacity: 1,transition: {delay: (index/10), duration: 0}}}
+                        initial={{ opacity: 0}}
+                        whileInView={{opacity: 1,transition: {delay: (index/15), duration: 0}}}
                         key={index}
                         onHoverStart={() => characterHover(index, title[index])}
                     >
@@ -91,8 +91,8 @@ const Hero = () => {
                     </motion.span>
                 ))}</h1>
             <a href="#projects" className='arrow'>↓</a>
-            <a href="#about" className='logo flex' title="Who?">
-                <img src="/svg/star2.svg" alt="" /><h4>beatrice balzer</h4></a>
+            <a href="#about" className='logo flex'>
+                <motion.img src="/svg/star2.svg" alt="" animate={{rotate: [0, 360], transition: {duration: 5, repeat: Infinity, ease: "linear"}}}/><h4>beatrice balzer</h4></a>
         </section>
     );
 }

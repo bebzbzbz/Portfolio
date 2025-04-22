@@ -1,44 +1,52 @@
 import { motion } from 'motion/react';
 import SingleSkill from '../SingleSkill/SingleSkill';
 import './Skillset.css'
+import { useRef } from 'react';
+import { transform } from 'motion';
 
 const Skillset = () => {
+    const images : string[] = [
+        "/svg/react.svg",
+        "/svg/typescript.svg",
+        "/svg/javascript.svg",
+        "/svg/html5.svg",
+        "/svg/sass.svg",
+        "/svg/tailwind.svg",
+        "/svg/photoshop.svg",
+        "/svg/indesign.svg",
+        "/svg/illustrator.svg",
+        "/svg/premiere.svg",
+        "/svg/figma.svg",
+    ]
+
+    const containerRef = useRef<HTMLDivElement | null>(null)
+
     return (  
         <motion.section id="skillset"
         initial={{ opacity: 0, y: 80 }}
-        whileInView={{opacity: 1, y: 0, transition: {delay: 0, duration: .4}}}
-        viewport={{once: false, amount: 0}}>
+        whileInView={{opacity: 1, y: 0, transition: {delay: .2, duration: .4}}}
+        viewport={{once: false, amount: 0}}
+        ref={containerRef}>
             <h2 className='stickyh2'>Skillset</h2>
             
-            <SingleSkill title='Tech Stack' skills={["React.js", "TypeScript", "JavaScript", "HTML5", "CSS3", "SASS/SCSS", "Tailwind CSS"]}/>
-            <div>
-                <img src="/svg/react.svg" alt="" />
-                <img src="/svg/typescript.svg" alt="" />
-                <img src="/svg/javascript.svg" alt="" />
-                <img src="/svg/html5.svg" alt="" />
-                <img src="/svg/css3.svg" alt="" />
-                <img src="/svg/sass.svg" alt="" />
-                <img src="/svg/tailwind.svg" alt="" />
-            </div>
+            <div className='skills flex'>
+                <SingleSkill title='Tech Stack' skills={[["React.js", ""], ["TypeScript", ""], ["JavaScript", ""], ["HTML5", ""], ["SASS/SCSS", ""], ["CSS3", ""], ["Tailwind CSS", ""]]}/>
 
-            <SingleSkill title='Design' skills={["Photoshop", "InDesign", "Illustrator", "Premiere Pro", "Figma"]}/>
+                <SingleSkill title='Design' skills={[["Photoshop", ""], ["InDesign", ""], ["Illustrator", ""], ["Premiere Pro", ""], ["Figma", ""]]}/>
 
-            <div>
-                <img src="/svg/photoshop.svg" alt="" />
-                <img src="/svg/indesign.svg" alt="" />
-                <img src="/svg/illustrator.svg" alt="" />
-                <img src="/svg/premiere.svg" alt="" />
-                <img src="/svg/figma.svg" alt="" />
+                <SingleSkill title='Languages' skills={[["German", " — Native Speaker"], ["English", " — C2"], ["Russian", " — B2"], ["French", " — B2"]]}/>                
             </div>
-            
-            <SingleSkill title='Languages' skills={["German - Native Speaker", "English - C2", "Russian - B1", "French - B2"]}/>
-            
-            <div>
-                <p>de</p>
-                <p>en</p>
-                <p>ru</p>
-                <p>fr</p>
-            </div>
+            <div className='imgs flex center-between'>
+                {images.map((image, index) =>
+                    <motion.img src={image}
+                    initial={{opacity: 0, y: -400}}
+                    whileInView={{opacity: 1, y: 0, transition:{duration: .5, delay: index * .2, ease: [0.25, 0.46, 0.45, 0.94]}}}
+                    drag
+                    dragConstraints={containerRef}
+                    dragElastic={.1}
+                    />
+                    )}
+                </div>
         </motion.section>
     );
 }

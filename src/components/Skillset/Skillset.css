@@ -1,12 +1,17 @@
 /* === SKILLSET === */
 #skillset {
-    padding-block: 10rem;
-    margin-inline: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 8rem;
+    position: relative;
 
-    div img {
-        height: 100px;
+    .skills {
+        padding-top: 10rem;
+        padding-right: 5rem;
+        justify-content: space-between;
+        margin-bottom: 10rem;
     }
+    .imgs {
+        img {
+            height: 120px;
+            bottom: 7rem;
+        }
+    } 
 }

@@ -8,13 +8,19 @@ const Contact = () => {
     return (  
         <motion.footer id="contact"
         initial={{ opacity: 0, y: 80 }}
-        whileInView={{opacity: 1, y: 0, transition: {delay: 0, duration: .4}}}
+        whileInView={{opacity: 1, y: 0, transition: {delay: .1, duration: .4}}}
         viewport={{once: false, amount: 0}}>
             <p>Eager to work and become part of your passionate team.</p>
             <a href="mailto:balzerbeatrice@gmail.com">
-                {myEmail1.split("").map((letter) => <span key={crypto.randomUUID()} className="special">{letter}</span>)
+                {myEmail1.split("").map((letter, index) => <motion.span key={crypto.randomUUID()} className="special"
+                initial={{ opacity: 0}}
+                whileInView={{opacity: 1,transition: {delay: (index/15), duration: 0}}}
+                >{letter}</motion.span>)
                 }
-                {myEmail2.split("").map((letter) => <span key={crypto.randomUUID()}>{letter}</span>)}
+                {myEmail2.split("").map((letter, index) => <motion.span key={crypto.randomUUID()}
+                initial={{ opacity: 0}}
+                whileInView={{opacity: 1,transition: {delay: ((index + 14)/15), duration: 0}}}
+                >{letter}</motion.span>)}
             </a>
             <ul className="flex">
                 <li>

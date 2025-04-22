@@ -6,7 +6,7 @@ const Projects = () => {
     return (  
         <motion.section id="projects"
         initial={{ opacity: 0, y: 80 }}
-        whileInView={{opacity: 1, y: 0, transition: {delay: 0, duration: .4}}}
+        whileInView={{opacity: 1, y: 0, transition: {delay: .2, duration: .4}}}
         viewport={{once: false, amount: 0}}>
             <h2 className="stickyh2">Projects</h2>
             <div className="teasers grid">
@@ -21,7 +21,7 @@ const Projects = () => {
                     githubLink="https://github.com/bebzbzbz/Project-Pokemon-API" 
                     deployLink="https://pokemon-api-duo-project.vercel.app/" video="/videos/pokemon.mp4"/>
                 <SingleProject 
-                    title="Beer Bar" 
+                    title="The Beer Bar" 
                     text='A collection of beers with the option to save and view in a favourites ("my beer shelf") page.' 
                     githubLink="https://github.com/bebzbzbz/Project_Beer_API" 
                     deployLink="https://bz-project-beer-api.vercel.app/" video="/videos/beer.mp4"/>
