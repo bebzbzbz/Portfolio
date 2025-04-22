@@ -1,12 +1,12 @@
 /* === SKILLSET === */
 #skillset {
+    padding-block: 10rem;
     margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 8rem;
 
-    article {
-        grid-template-columns: 1fr 1fr;
+    div img {
+        height: 100px;
     }
-
-    /* h2 {
-        text-align: right;
-    } */
 }

@@ -3,23 +3,26 @@
     height: 100vh;
     color: var(--main);
     align-items: center;
+    justify-content: center;
     padding-top: 0;
 
     h1 {
-        font-size: 6rem;
+        width: 100%;
+        font-size: 8rem;
+        /* font-family: "Orbit"; */
+        /* text-transform: uppercase; */
     }
 
-    a {
+    a:first-of-type {
         position: absolute;
-        right: 10rem;
+        bottom: 10rem;
     }
 
-    div {
+    .logo {
         position: absolute;
         top: 2rem;
         left: 2rem;
         font-size: 2rem;
-        font-family: "Helvetica";
         align-items: center;
         gap: 5px;
 

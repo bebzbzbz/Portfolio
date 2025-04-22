@@ -10,18 +10,11 @@ footer {
         margin-bottom: 1rem;
 
         span.italic {
-            font-family: "Playfair Italic";
             font-weight: 700;
         }
 
-        &:after {
-            content: "";
-            position: absolute;
-            bottom: 4px;
-            display: block;
-            height: 1px;
-            width: 100%;
-            background-color: #000;
+        &:not(.btn):after {
+            transition: width .6s ease;
         }
     }
 }

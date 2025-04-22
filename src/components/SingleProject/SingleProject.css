@@ -1,31 +1,24 @@
 /* === SINGLE PROJECT === */
 .teaser {
-    article:first-of-type {
+    > a {
         overflow: hidden;
-        max-height: 400px;
+        max-height: 450px;
     
         video {
-            height: 100%;
+            min-width: 110%;
             width: 110%;
             object-fit: cover;
-            opacity: .7;
-            transition: opacity .2s ease;
+            filter: saturate(0) contrast(1.2);
+            transition: filter .2s ease;
 
             &:hover {
-                opacity: 1;
+                filter: saturate(1);
             }
         }
     }
     
-    article:last-of-type {
+    article {
         grid-template-columns: 2fr 3fr;
-
         padding: 2rem;
-        a {
-            background-color: #000;
-            color: #fff;
-            font-size: 1.5rem;
-            padding: .5rem 1rem;
-        }
     }
 }

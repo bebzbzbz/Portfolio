@@ -1,57 +1,45 @@
+import { motion } from 'motion/react';
+import SingleSkill from '../SingleSkill/SingleSkill';
 import './Skillset.css'
 
 const Skillset = () => {
     return (  
-        <section id="skillset">
+        <motion.section id="skillset"
+        initial={{ opacity: 0, y: 80 }}
+        whileInView={{opacity: 1, y: 0, transition: {delay: 0, duration: .4}}}
+        viewport={{once: false, amount: 0}}>
             <h2 className='stickyh2'>Skillset</h2>
-            <article className="grid">
+            
+            <SingleSkill title='Tech Stack' skills={["React.js", "TypeScript", "JavaScript", "HTML5", "CSS3", "SASS/SCSS", "Tailwind CSS"]}/>
             <div>
-                <h3>Tech Stack</h3>
-                <ul>
-                    <li>React.js</li>
-                    <li>TypeScript</li>
-                    <li>JavaScript</li>
-                    <li>HTML5</li>
-                    <li>CSS3</li>
-                    <li>SASS/SCSS</li>
-                    <li>Tailwind CSS</li>
-                </ul>
+                <img src="/svg/react.svg" alt="" />
+                <img src="/svg/typescript.svg" alt="" />
+                <img src="/svg/javascript.svg" alt="" />
+                <img src="/svg/html5.svg" alt="" />
+                <img src="/svg/css3.svg" alt="" />
+                <img src="/svg/sass.svg" alt="" />
+                <img src="/svg/tailwind.svg" alt="" />
             </div>
+
+            <SingleSkill title='Design' skills={["Photoshop", "InDesign", "Illustrator", "Premiere Pro", "Figma"]}/>
+
             <div>
-                <h3>Workflow</h3>
-                <ul>
-                    <li>Responsive Layout</li>
-                    <li>Git</li>
-                    <li>Debugging</li>
-                    <li>Node.js</li>
-                    <li>CSS Animations</li>
-                    <li>RESTful APIs</li>
-                </ul>
+                <img src="/svg/photoshop.svg" alt="" />
+                <img src="/svg/indesign.svg" alt="" />
+                <img src="/svg/illustrator.svg" alt="" />
+                <img src="/svg/premiere.svg" alt="" />
+                <img src="/svg/figma.svg" alt="" />
             </div>
             
-            </article>
-            <article className='grid col-2'>
+            <SingleSkill title='Languages' skills={["German - Native Speaker", "English - C2", "Russian - B1", "French - B2"]}/>
+            
             <div>
-                <h3>Design</h3>
-                <ul>
-                    <li>Photoshop</li>
-                    <li>InDesign</li>
-                    <li>Illustrator</li>
-                    <li>Premiere Pro</li>
-                    <li>Figma</li>
-                </ul>
+                <p>de</p>
+                <p>en</p>
+                <p>ru</p>
+                <p>fr</p>
             </div>
-            <div>
-                <h3>Languages</h3>
-                <ul>
-                    <li>German - Native Speaker</li>
-                    <li>English - C2</li>
-                    <li>Russian - B1</li>
-                    <li>French - B2</li>
-                </ul>
-            </div>
-            </article>
-        </section>
+        </motion.section>
     );
 }
 
