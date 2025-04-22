@@ -2,23 +2,9 @@ import { motion } from 'motion/react';
 import SingleSkill from '../SingleSkill/SingleSkill';
 import './Skillset.css'
 import { useRef } from 'react';
-import { transform } from 'motion';
+import SkillImgs from '../SkillImgs/SkillImgs';
 
 const Skillset = () => {
-    const images : string[] = [
-        "/svg/react.svg",
-        "/svg/typescript.svg",
-        "/svg/javascript.svg",
-        "/svg/html5.svg",
-        "/svg/sass.svg",
-        "/svg/tailwind.svg",
-        "/svg/photoshop.svg",
-        "/svg/indesign.svg",
-        "/svg/illustrator.svg",
-        "/svg/premiere.svg",
-        "/svg/figma.svg",
-    ]
-
     const containerRef = useRef<HTMLDivElement | null>(null)
 
     return (  
@@ -36,17 +22,7 @@ const Skillset = () => {
 
                 <SingleSkill title='Languages' skills={[["German", " — Native Speaker"], ["English", " — C2"], ["Russian", " — B2"], ["French", " — B2"]]}/>                
             </div>
-            <div className='imgs flex center-between'>
-                {images.map((image, index) =>
-                    <motion.img src={image}
-                    initial={{opacity: 0, y: -400}}
-                    whileInView={{opacity: 1, y: 0, transition:{duration: .5, delay: index * .2, ease: [0.25, 0.46, 0.45, 0.94]}}}
-                    drag
-                    dragConstraints={containerRef}
-                    dragElastic={.1}
-                    />
-                    )}
-                </div>
+            <SkillImgs containerRef={containerRef}/>
         </motion.section>
     );
 }
