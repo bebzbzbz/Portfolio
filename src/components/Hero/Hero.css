@@ -5,27 +5,29 @@
     align-items: center;
     justify-content: center;
     padding-top: 0;
+    padding-left: 2rem;
 
     h1 {
-        font-size: 8rem;
+        font-size: clamp(3.6rem, 6vw, 8rem);
+        line-height: 4.5rem;
+        text-align: left;
     }
 
     a:first-of-type {
         position: absolute;
-        bottom: 10rem;
+        bottom: 7rem;
     }
 
     .logo {
         position: absolute;
-        top: 2rem;
-        left: 2rem;
-        font-size: 2rem;
+        top: 6rem;
+        left: 1rem;
+        font-size: clamp(1.9rem, 1.6vw, 2rem);
         align-items: center;
         gap: 5px;
 
         img {
             height: 30px;
-            animation: spin 10s linear infinite;
         }
 
         &:after {
@@ -45,6 +47,26 @@
 
         &:hover:after {
             display: flex;
+        }
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    #hero {    
+        .logo {
+            top: 2rem;
+            left: 2rem;
+    
+            img {
+                height: 30px;
+            }
+    
+            &:after {
+                top: 4rem;
+                left: 4rem;
+                padding-inline: 2rem;
+                height: 35px;
+            }
         }
     }
 }

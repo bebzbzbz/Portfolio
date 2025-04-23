@@ -13,6 +13,10 @@ const AboutMe = () => {
                     <motion.p
                     initial={{opacity: 0, y: 80}}
                     whileInView={{opacity: 1, y: 0, transition:{delay: .2, duration: .4}}}
+                    >Hi, <b>I'm Bea!</b></motion.p>
+                    <motion.p
+                    initial={{opacity: 0, y: 80}}
+                    whileInView={{opacity: 1, y: 0, transition:{delay: .2, duration: .4}}}
                     >I'm a Frontend Web Developer with an <b>eye for design</b> and a <b>passion for solving puzzles</b>. I keep the balance between determined clean results and <b>curious and creative playing around</b>.</motion.p>
                     <motion.p
                     initial={{opacity: 0, y: 80}}

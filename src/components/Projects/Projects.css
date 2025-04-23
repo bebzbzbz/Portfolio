@@ -1,8 +1,17 @@
 /* === PROJECTS === */
 #projects {
     .teasers {
-        grid-template-columns: 1fr 1fr;
-        gap: 10rem;
-        padding-top: 10rem;
+        gap: 7rem;
+        padding-top: 7rem;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    #projects {
+        .teasers {
+            grid-template-columns: 1fr 1fr;
+            gap: 10rem;
+            padding-top: 10rem;
+        }
     }
 }

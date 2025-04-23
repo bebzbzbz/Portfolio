@@ -10,7 +10,7 @@ const Contact = () => {
         initial={{ opacity: 0, y: 80 }}
         whileInView={{opacity: 1, y: 0, transition: {delay: .1, duration: .4}}}
         viewport={{once: false, amount: 0}}>
-            <p>Eager to work and become part of your passionate team.</p>
+            <p>Eager to work and become part of your passionate team! (●'◡'●)</p>
             <a href="mailto:balzerbeatrice@gmail.com">
                 {myEmail1.split("").map((letter, index) => <motion.span key={crypto.randomUUID()} className="special"
                 initial={{ opacity: 0}}

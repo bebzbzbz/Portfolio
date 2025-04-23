@@ -3,15 +3,29 @@
     position: relative;
 
     .skills {
-        padding-top: 10rem;
-        padding-right: 5rem;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        padding-top: 7rem;
         justify-content: space-between;
-        margin-bottom: 10rem;
+        gap: 5rem;
     }
     .imgs {
+        display: none;
         img {
-            height: 120px;
-            bottom: 7rem;
+            height: clamp(90px, 7vw, 110px);
         }
     } 
+}
+
+@media screen and (min-width: 1200px) {
+    #skillset {
+        .skills {
+            padding-top: 10rem;
+            margin-bottom: 15rem;
+        }
+        .imgs {
+            display: flex;
+            gap: unset;
+        } 
+    }
 }

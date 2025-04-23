@@ -2,23 +2,38 @@
 .teaser {
     > a {
         overflow: hidden;
-        max-height: 450px;
+        max-height: 600px;
     
         video {
             min-width: 110%;
             width: 110%;
             object-fit: cover;
-            filter: saturate(0) contrast(1.2);
-            transition: filter .2s ease;
-
-            &:hover {
-                filter: saturate(1);
-            }
         }
     }
     
     article {
-        grid-template-columns: 2fr 3fr;
-        padding: 2rem;
+        padding: 1rem;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .teaser {
+        > a {
+            max-height: 450px;
+        
+            video {
+                filter: saturate(0) contrast(1.2);
+                transition: filter .2s ease;
+    
+                &:hover {
+                    filter: saturate(1);
+                }
+            }
+        }
+        
+        article {
+            grid-template-columns: 2fr 3fr;
+            padding: 2rem;
+        }
     }
 }

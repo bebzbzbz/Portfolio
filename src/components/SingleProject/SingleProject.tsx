@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
 import './SingleProject.css'
+import { useEffect, useRef } from 'react';
 
 interface SingleProjectProps {
     title: string,
@@ -10,14 +11,31 @@ interface SingleProjectProps {
 }
 
 const SingleProject = ({title, text, githubLink, deployLink, video}: SingleProjectProps) => {
+    const isMobile = navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i)
+
+    const videoEl = useRef<HTMLVideoElement>(null);
+
+    const attemptPlay = () => {
+        videoEl &&
+        videoEl.current &&
+        videoEl.current.play().catch(error => {
+        console.error("Error attempting to play", error);
+        });
+    };
+
+    useEffect(() => {
+        if(!isMobile) {
+            attemptPlay();
+        }
+    }, []);
 
     return (  
         <motion.div className="flex flex-col teaser"
             initial={{ opacity: 0, y: 80 }}
             whileInView={{opacity: 1, y: 0, transition: {delay: .3, duration: .4}}}
             viewport={{once: false, amount: 0}}>
-            <a href={deployLink} target='_blank' className="dropshadow flex center-center">
-                <video src={video} loop onMouseEnter={(e) => (e.target as HTMLVideoElement).play()} onMouseLeave={(e) => (e.target as HTMLVideoElement).pause()}>
+            <a href={deployLink} target='_blank' className="dropshadow flex center-center" title='View project website'>
+                <video src={video} loop ref={videoEl} onMouseEnter={(e) => {!isMobile && (e.target as HTMLVideoElement).play()}} onMouseLeave={(e) => {!isMobile && (e.target as HTMLVideoElement).pause()}}>
                 </video>
             </a>
             <article className="grid">

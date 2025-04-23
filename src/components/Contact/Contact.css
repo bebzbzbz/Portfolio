@@ -1,21 +1,36 @@
 /* === FOOTER/CONTACT === */
 footer {
-    padding-block: 10rem;
+    padding-block: 3rem 7rem;
     
     > a {
-        font-size: 9rem;
+        font-size: clamp(1.7rem, 5vw, 9rem);
+        border-block: 1px solid #000;
+        padding-block: 2.5rem;
         display: flex;
         align-items: center;
         justify-content: space-between;
         position: relative;
         margin-block: 5rem;
 
-        span.italic {
-            font-weight: 700;
-        }
-
         &:not(.btn):after {
             transition: width .6s ease;
+        }
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    footer {
+        padding-block: 2rem 7rem;
+        
+        > a {
+            display: flex;
+            margin-block: 5rem;
+            border: none;
+    
+            &:not(.btn):after {
+                bottom: -10px;
+                transition: width .6s ease;
+            }
         }
     }
 }
