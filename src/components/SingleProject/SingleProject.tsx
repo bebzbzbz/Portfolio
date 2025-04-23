@@ -16,17 +16,16 @@ const SingleProject = ({title, text, githubLink, deployLink, video}: SingleProje
     const videoEl = useRef<HTMLVideoElement>(null);
 
     const attemptPlay = () => {
+        if(isMobile) {
         videoEl &&
         videoEl.current &&
         videoEl.current.play().catch(error => {
         console.error("Error attempting to play", error);
-        });
+        })}
     };
 
     useEffect(() => {
-        if(!isMobile) {
-            attemptPlay();
-        }
+        attemptPlay();
     }, []);
 
     return (  
@@ -35,7 +34,15 @@ const SingleProject = ({title, text, githubLink, deployLink, video}: SingleProje
             whileInView={{opacity: 1, y: 0, transition: {delay: .3, duration: .4}}}
             viewport={{once: false, amount: 0}}>
             <a href={deployLink} target='_blank' className="dropshadow flex center-center" title='View project website'>
-                <video src={video} loop ref={videoEl} onMouseEnter={(e) => {!isMobile && (e.target as HTMLVideoElement).play()}} onMouseLeave={(e) => {!isMobile && (e.target as HTMLVideoElement).pause()}}>
+                <video
+                    // src={video} 
+                    loop
+                    muted
+                    playsInline
+                    ref={videoEl} 
+                    onMouseEnter={(e) => {!isMobile && (e.target as HTMLVideoElement).play()}} 
+                    onMouseLeave={(e) => {!isMobile && (e.target as HTMLVideoElement).pause()}}>
+                        <source src={video} />
                 </video>
             </a>
             <article className="grid">
