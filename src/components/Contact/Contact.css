@@ -12,9 +12,18 @@ footer {
         position: relative;
         margin-block: 5rem;
 
-        &:not(.btn):after {
-            transition: width .6s ease;
+        span {
+            transition: color .1s ease .8s;
+            
+            &:hover {
+                color: var(--main);
+                transition-delay: 0s;
+            }
         }
+
+        /* &:not(.btn):after {
+            transition: width .6s ease;
+        } */
     }
 }
 

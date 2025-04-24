@@ -13,6 +13,11 @@
         display: none;
         img {
             height: clamp(90px, 7vw, 110px);
+            cursor: pointer;
+
+            &:nth-of-type(even) {
+                margin-bottom: -8rem;
+            }
         }
     } 
 }

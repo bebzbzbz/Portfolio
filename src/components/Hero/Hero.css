@@ -1,58 +1,100 @@
 /* === HERO === */
 #hero {
     height: 100vh;
-    color: var(--main);
+    color: var(--dark);
     align-items: center;
     justify-content: center;
-    padding-top: 0;
-    padding-left: 2rem;
+    padding-top: 1rem;
+    padding-inline: 1.5rem;
 
     h1 {
         font-size: clamp(3.6rem, 6vw, 8rem);
-        line-height: 4.5rem;
-        text-align: left;
+        line-height: 5rem;
+        justify-content: space-between;
+        height: 75%;
+        width: 90%;
+
+        >span {
+            display: block;
+
+            &:nth-of-type(1) {
+                align-self: flex-start;
+                text-align: left;
+                width: 60%;
+            }
+            &:nth-of-type(2) {
+                text-align: right;
+                align-self: flex-end;
+                width: 85%;
+            }
+
+            span {
+                transition: color .1s ease .8s;
+                
+                &:hover {
+                    color: var(--main);
+                    transition-delay: 0s;
+                }
+            }
+        }
+    }
+    a {
+        position: absolute;
+        text-align: center;
+        width: 3rem;
+        top: calc(50vh - 1.5rem);
+        left: calc(50vw - 1.5rem);
+    }
+    img {
+        position: absolute;
+        z-index: -1;
+
+        &:nth-of-type(1) {
+            height: 180px;
+            top: 25vh;
+            right: 6vw;
+        }
+        &:nth-of-type(2) {
+            height: 110px;
+            bottom: 30vh;
+            left: 8vw;
+        }
     }
 
-    a:first-of-type {
-        position: absolute;
-        bottom: 7rem;
-    }
-
-    .logo {
-        position: absolute;
-        top: 6rem;
-        left: 1rem;
-        font-size: clamp(1.9rem, 1.6vw, 2rem);
+    /* &:after {
+        content: "who's that?";
+        display: none;
         align-items: center;
-        gap: 5px;
+        position: absolute;
+        top: 4rem;
+        left: 4rem;
+        padding-inline: 2rem;
+        background-color: #000;
+        color: #fff;
+        height: 35px;
+        width: fit-content;
+        font-family: "MDIO Italic";
+    } */
 
-        img {
-            height: 30px;
-        }
-
-        &:after {
-            content: "who's that?";
-            display: none;
-            align-items: center;
-            position: absolute;
-            top: 4rem;
-            left: 4rem;
-            padding-inline: 2rem;
-            background-color: #000;
-            color: #fff;
-            height: 35px;
-            width: fit-content;
-            font-family: "MDIO Italic";
-        }
-
-        &:hover:after {
-            display: flex;
-        }
-    }
+    /* &:hover:after {
+        display: flex;
+    } */
 }
 
 @media screen and (min-width: 1200px) {
-    #hero {    
+    #hero {
+        h1 {
+            text-align: center;
+            line-height: 10rem;
+
+            > span {
+
+                &:nth-of-type(1), &:nth-of-type(2) {
+                    width: 100%;
+                }
+            }
+        }
+        padding-right: 3rem;
         .logo {
             top: 2rem;
             left: 2rem;
@@ -66,6 +108,18 @@
                 left: 4rem;
                 padding-inline: 2rem;
                 height: 35px;
+            }
+        }
+        img {
+            &:nth-of-type(1) {
+                height: 400px;
+                top: 15vh;
+                right: 13vw;
+            }
+            &:nth-of-type(2) {
+                height: 250px;
+                bottom: 20vh;
+                left: 10vw;
             }
         }
     }

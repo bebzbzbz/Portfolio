@@ -15,10 +15,10 @@ function App() {
       <Nav german={german} setGerman={setGerman}/>
       <main>
         <Hero/>
-        <Projects/>
-        <Skillset/>
-        <AboutMe/>
-        <Contact/>
+        <Projects german={german}/>
+        <Skillset german={german}/>
+        <AboutMe german={german}/>
+        <Contact german={german}/>
       </main>
     </>
   )

@@ -2,20 +2,19 @@
 #about {
     position: relative;
     .text {
-        padding-top: 2rem;
+        padding-top: 5rem;
         display: flex;
         gap: 2rem;
         flex-direction: column-reverse;
 
         img {
+            position: relative;
             -webkit-mask-image: url(/svg/star.svg);
             mask-image: url(/svg/star.svg);
             mask-repeat: no-repeat;
             mask-size: 100%;
             mask-position: center;
             width: 55%;
-            top: 8rem;
-            right: 0;
         }
     
         article {
@@ -43,6 +42,10 @@
         .text {
             padding-top: 10rem;
             flex-direction: row;
+
+            img {
+                animation: soft-float 1.2s ease-in-out infinite alternate;
+            }
         }       
     }
 }

@@ -20,13 +20,20 @@
     .teaser {
         > a {
             max-height: 450px;
+            background-color: rgb(15 32 122);
+            transition: background-color .2s ease;
         
             video {
-                filter: saturate(0) contrast(1.2);
-                transition: filter .2s ease;
-    
-                &:hover {
-                    filter: saturate(1);
+                mix-blend-mode: screen;
+                transition: opacity .4s ease;
+                filter: blur(5px);
+            }
+
+            &:hover {
+                background-color: var(--dark);
+
+                video {
+                    filter: unset
                 }
             }
         }
