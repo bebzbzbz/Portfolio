@@ -11,12 +11,17 @@
     }
     .imgs {
         display: none;
-        img {
+        svg {
             height: clamp(90px, 7vw, 110px);
             cursor: pointer;
+            transition: color .3s ease;
 
             &:nth-of-type(even) {
                 margin-bottom: -8rem;
+            }
+
+            &:hover {
+                color: var(--main);
             }
         }
     } 

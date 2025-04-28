@@ -15,6 +15,7 @@
             mask-size: 100%;
             mask-position: center;
             width: 55%;
+            filter: brightness(1.1);
         }
     
         article {

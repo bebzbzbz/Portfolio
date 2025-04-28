@@ -1,6 +1,6 @@
 /* === HERO === */
 #hero {
-    height: 100vh;
+    height: 100dvh;
     color: var(--dark);
     align-items: center;
     justify-content: center;
@@ -42,7 +42,7 @@
         position: absolute;
         text-align: center;
         width: 3rem;
-        top: calc(50vh - 1.5rem);
+        top: calc(50dvh - 1.5rem);
         left: calc(50vw - 1.5rem);
     }
     img {
@@ -51,12 +51,12 @@
 
         &:nth-of-type(1) {
             height: 180px;
-            top: 25vh;
+            top: 25dvh;
             right: 6vw;
         }
         &:nth-of-type(2) {
             height: 110px;
-            bottom: 30vh;
+            bottom: 30dvh;
             left: 8vw;
         }
     }
@@ -113,12 +113,12 @@
         img {
             &:nth-of-type(1) {
                 height: 400px;
-                top: 15vh;
+                top: 15dvh;
                 right: 13vw;
             }
             &:nth-of-type(2) {
                 height: 250px;
-                bottom: 20vh;
+                bottom: 20dvh;
                 left: 10vw;
             }
         }
