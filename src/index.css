@@ -91,9 +91,9 @@ footer, section:not(#hero) {
     position: relative
 }
 
-p {
+/* p {
     margin-bottom: 1rem;
-}
+} */
 
 b {
     font-weight: 500;
@@ -123,7 +123,7 @@ b {
 
 .dropshadow {
     border: 1px solid var(--dark);
-    /* box-shadow: 6px 6px 0px 0px var(--linkblue, var(--main)); */
+    box-shadow: 6px 6px 0px 0px var(--dark, var(--main));
 }
 
 .stickyh2 {

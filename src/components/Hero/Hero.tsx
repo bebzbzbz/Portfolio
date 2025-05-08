@@ -136,15 +136,22 @@ const Hero = () => {
                     </motion.span>
                 ))}</span>
             </h1>
-            <a href="#projects" className='arrow'>↓</a>
-            <motion.img 
+            <div className='star1'>
+                <div>
+                <motion.img 
                 src="/svg/star2.svg" 
                 alt="Star" 
                 animate={{rotate: [0, 360], transition: {duration: 15, repeat: Infinity, ease: "linear"}}}/>
-            <motion.img 
+
+                <a href="#projects" className='arrow'>see my projects</a>
+                </div>
+            </div>
+            <div className='star2'>
+                <motion.img 
                 src="/svg/star2.svg" 
                 alt="Star" 
                 animate={{rotate: [0, 360], transition: {duration: 12, repeat: Infinity, ease: "linear"}}}/>
+            </div>
         </section>
     );
 }

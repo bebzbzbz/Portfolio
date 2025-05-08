@@ -34,8 +34,9 @@ const SingleProject = ({title, text, githubLink, deployLink, video}: SingleProje
             whileInView={{opacity: 1, y: 0, transition: {delay: .3, duration: .4}}}
             viewport={{once: false, amount: 0}}>
             <a href={deployLink} target='_blank' className="dropshadow flex center-center" title='View project website'>
+                <div className="halftone">
+                    <div className="dots"></div>
                 <video
-                    // src={video} 
                     loop
                     muted
                     playsInline
@@ -44,6 +45,7 @@ const SingleProject = ({title, text, githubLink, deployLink, video}: SingleProje
                     onMouseLeave={(e) => {!isMobile && (e.target as HTMLVideoElement).pause()}}>
                         <source src={video} />
                 </video>
+                </div>
             </a>
             <article className="grid">
                 <div className="flex flex-col">

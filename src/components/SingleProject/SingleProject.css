@@ -1,8 +1,10 @@
 /* === SINGLE PROJECT === */
 .teaser {
     > a {
-        overflow: hidden;
-        max-height: 600px;
+    overflow: hidden;
+    max-height: 600px;
+    position: relative;
+    aspect-ratio: 5/3;
     
         video {
             min-width: 110%;
@@ -26,7 +28,7 @@
             video {
                 mix-blend-mode: screen;
                 transition: opacity .4s ease;
-                filter: blur(5px);
+                filter: saturate(0);
             }
 
             &:hover {
@@ -34,6 +36,40 @@
 
                 video {
                     filter: unset
+                }
+
+                .halftone {
+                    filter: none;
+
+                    .dots {
+                        opacity: 0;
+                    } 
+                }
+            }
+
+            .halftone {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            filter: brightness(0.6) blur(.4px) contrast(20);
+            transition: filter .4s ease;
+
+                .dots {
+                opacity: 1;
+                position: absolute;
+                inset: 0;
+                background: 
+                radial-gradient(4px at center, black, white),
+                radial-gradient(4px at 3px 7px, cyan, white),
+                radial-gradient(4px at 7px 4px, magenta, white),
+                radial-gradient(4px at 13px 13px, yellow, white);
+                background-size: 5px 5px;
+                mix-blend-mode: screen;
+                background-blend-mode: multiply;
+                transition: opacity .3s ease;
                 }
             }
         }
