@@ -17,7 +17,7 @@ const Contact = ({german} : ContactProps) => {
         whileInView={{opacity: 1, y: 0, transition: {delay: .1, duration: .4}}}
         viewport={{once: false, amount: 0}}>
             <p>{german ? "Ich freue mich euch kennenzulernen und Teil eines passionierten Teams zu werden!" : "Eager to meet you and become part of your passionate team!"}</p>
-            <a href="mailto:balzerbeatrice@gmail.com" title='Send me an email! :)' className='email flex'>
+            <a href="mailto:balzerbeatrice@gmail.com" title='Send me an email! :)' className='email'>
                 {myEmail1.split("").map((letter, index) => <motion.span key={crypto.randomUUID()} className="special"
                 initial={{ opacity: 0}}
                 whileInView={{opacity: 1,transition: {delay: (index/15), duration: 0}}}

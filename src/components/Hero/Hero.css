@@ -12,7 +12,7 @@
         font-size: clamp(3.6rem, 6vw, 7.5rem);
         line-height: 5rem;
         justify-content: space-between;
-        height: 86%;
+        height: 82%;
         width: 93%;
 
         >span {
@@ -54,7 +54,7 @@
 
             a {
                 text-align: center;
-                margin-top: -1.5rem;;
+                margin-top: -1rem;;
                 width: 10rem;
                 font-size: clamp(1.3rem, 1.8vw, 1.8rem);
                 line-height: 2.2rem;
@@ -84,13 +84,12 @@
         right: -10dvw;
 
         img {
-            height: 270px;
-            height: clamp(230px, 75vw, 750px);
+            height: clamp(200px, 70vw, 750px);
         }
     }
     .star2 {
         bottom: 23dvh;
-        left: -3vw;
+        left: -1vw;
 
         img {
             height: clamp(180px, 40vw, 520px);
