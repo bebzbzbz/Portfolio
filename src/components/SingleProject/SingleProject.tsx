@@ -4,7 +4,7 @@ import { useEffect, useRef } from 'react';
 
 interface SingleProjectProps {
     title: string,
-    text: string,
+    text?: string,
     githubLink: string,
     deployLink: string
     video: string
@@ -29,12 +29,12 @@ const SingleProject = ({title, text, githubLink, deployLink, video}: SingleProje
     }, []);
 
     return (  
-        <motion.div className="flex flex-col teaser"
+        <motion.div className="grid teaser"
             initial={{ opacity: 0, y: 80 }}
             whileInView={{opacity: 1, y: 0, transition: {delay: .3, duration: .4}}}
             viewport={{once: false, amount: 0}}>
-            <a href={deployLink} target='_blank' className="dropshadow flex center-center" title='View project website'>
-                <div className="halftone">
+            <a href={deployLink} target='_blank' className="flex center-center" title='View project website'>
+                <div className="halftone flex center-center">
                     <div className="dots"></div>
                 <video
                     loop
@@ -47,18 +47,17 @@ const SingleProject = ({title, text, githubLink, deployLink, video}: SingleProje
                 </video>
                 </div>
             </a>
-            <article className="grid">
+            <article className="">
                 <div className="flex flex-col">
                     <h3>{title}</h3>
-                    <div className="flex">
+                    <div className="btns flex">
                         <a href={githubLink} className='btn' target="_blank" title="See the project on Github">Github</a>
                         <a href={deployLink} className='btn' target="_blank" title="Visit the deployed project website">Deployment</a>
                     </div>
                 </div>
-                <p>{text}</p>
+                {/* <p>{text}</p> */}
             </article>
         </motion.div>
-        
     );
 }
 

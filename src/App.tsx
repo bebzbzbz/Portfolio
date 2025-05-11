@@ -14,7 +14,7 @@ function App() {
     <>
       <Nav german={german} setGerman={setGerman}/>
       <main>
-        <Hero/>
+        <Hero german={german}/>
         <Projects german={german}/>
         <Skillset german={german}/>
         <AboutMe german={german}/>

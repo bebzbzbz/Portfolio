@@ -1,13 +1,13 @@
 /* === SKILLSET === */
 #skillset {
     position: relative;
+    margin-bottom: 10rem;
 
     .skills {
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
+        flex-direction: column;
         padding-top: 7rem;
         justify-content: space-between;
-        gap: 5rem;
+        gap: 20dvh;
     }
     .imgs {
         display: none;
@@ -34,8 +34,8 @@
             margin-bottom: 15rem;
         }
         .imgs {
-            display: flex;
             gap: unset;
+            display: flex;
         } 
     }
 }

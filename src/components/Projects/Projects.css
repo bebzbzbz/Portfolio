@@ -1,16 +1,24 @@
 /* === PROJECTS === */
 #projects {
     .teasers {
-        gap: 7rem;
         padding-top: 7rem;
+        gap: 7rem;
     }
 }
 
+@media screen and (min-width: 700px) {
+    #projects {
+        .teasers {
+            grid-template-columns: repeat(2, 1fr);
+            padding-top: 10rem;
+            gap: 5rem 0 ;
+        }
+    }
+}
 @media screen and (min-width: 1200px) {
     #projects {
         .teasers {
-            grid-template-columns: 1fr 1fr;
-            gap: 10rem;
+            grid-template-columns: repeat(5, 1fr);
             padding-top: 10rem;
         }
     }

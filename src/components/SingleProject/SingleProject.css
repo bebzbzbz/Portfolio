@@ -1,27 +1,45 @@
 /* === SINGLE PROJECT === */
 .teaser {
+    grid-template-columns: 55% 45%;
+    align-items: center;
+    gap: .5rem;
+
     > a {
     overflow: hidden;
-    max-height: 600px;
     position: relative;
-    aspect-ratio: 5/3;
+    aspect-ratio: 9/19;
+    border: 1px solid black;
     
         video {
-            min-width: 110%;
-            width: 110%;
+            min-width: 130%;
+            width: 130%;
             object-fit: cover;
         }
     }
     
     article {
         padding: 1rem;
+
+        .btns {
+            flex-wrap: wrap;
+        }
     }
 }
 
+@media screen and (min-width: 700px) {
+    .teaser {
+        grid-template-columns: 1fr;
+
+        &:first-child {
+            > a {
+                border-right: none;
+            }
+        }
+    }
+}
 @media screen and (min-width: 1200px) {
     .teaser {
         > a {
-            max-height: 450px;
             background-color: rgb(15 32 122);
             transition: background-color .2s ease;
         
@@ -29,6 +47,8 @@
                 mix-blend-mode: screen;
                 transition: opacity .4s ease;
                 filter: saturate(0);
+                width: 123%;
+                min-width: 123%;
             }
 
             &:hover {
@@ -48,14 +68,11 @@
             }
 
             .halftone {
-            display: flex;
-            justify-content: center;
-            align-items: center;
             position: absolute;
             height: 100%;
             width: 100%;
-            filter: brightness(0.6) blur(.4px) contrast(20);
-            transition: filter .4s ease;
+            filter: brightness(0.6) blur(.4px) contrast(15);
+            /* transition: filter .4s ease; */
 
                 .dots {
                 opacity: 1;
@@ -63,20 +80,30 @@
                 inset: 0;
                 background: 
                 radial-gradient(4px at center, black, white),
-                radial-gradient(4px at 3px 7px, cyan, white),
-                radial-gradient(4px at 7px 4px, magenta, white),
+                radial-gradient(6px at 4px 6px, cyan, white),
+                radial-gradient(4px at 5px 4px, magenta, white),
                 radial-gradient(4px at 13px 13px, yellow, white);
                 background-size: 5px 5px;
                 mix-blend-mode: screen;
                 background-blend-mode: multiply;
-                transition: opacity .3s ease;
+                transition: opacity .5s ease;
                 }
+            }
+
+        }
+        &:not(:first-child) {
+            > a {
+                border-left: none;
             }
         }
         
         article {
-            grid-template-columns: 2fr 3fr;
             padding: 2rem;
+            width: 100%;
+
+            h3 {
+                font-size: 2rem
+            }
         }
     }
 }

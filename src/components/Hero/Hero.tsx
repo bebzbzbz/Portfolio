@@ -2,7 +2,11 @@ import { useEffect, useState } from 'react';
 import './Hero.css'
 import { motion } from 'motion/react';
 
-const Hero = () => {
+interface HeroProps {
+    german: boolean;
+}
+
+const Hero = ({german} : HeroProps) => {
     const name : string = "Beatrice Balzer"
     const title : string = "Frontend Web Developer"
     const replacementSymbols: Record<string, string[]> = {
@@ -137,20 +141,28 @@ const Hero = () => {
                 ))}</span>
             </h1>
             <div className='star1'>
-                <div>
                 <motion.img 
                 src="/svg/star2.svg" 
                 alt="Star" 
-                animate={{rotate: [0, 360], transition: {duration: 15, repeat: Infinity, ease: "linear"}}}/>
+                initial={{ opacity: 0}}
+                whileInView={{opacity: 1,transition: {delay: (.3), duration: .7}}}
+                animate={{rotate: [0, 360], transition: {duration: 30, repeat: Infinity, ease: "linear"}}}/>
 
-                <a href="#projects" className='arrow'>see my projects</a>
+                <div className='link-wrapper flex'>
+                    <a href="#projects" className='arrow'>{german ? "zu meinen projekten" : "see my projects"}</a>
                 </div>
             </div>
             <div className='star2'>
                 <motion.img 
                 src="/svg/star2.svg" 
                 alt="Star" 
-                animate={{rotate: [0, 360], transition: {duration: 12, repeat: Infinity, ease: "linear"}}}/>
+                initial={{ opacity: 0}}
+                whileInView={{opacity: 1,transition: {delay: (.3), duration: .7}}}
+                animate={{rotate: [0, 360], transition: {duration: 25, repeat: Infinity, ease: "linear"}}}/>
+
+                <div className='link-wrapper flex'>
+                    <a href="#about" className='arrow'>{german ? "über mich" : "about me"}</a>
+                </div>
             </div>
         </section>
     );

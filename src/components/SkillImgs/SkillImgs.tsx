@@ -22,7 +22,7 @@ const SkillImgs = ({containerRef}: SkillImgsProps) => {
     ];
 
     return (  
-        <div className='imgs flex center-between'>
+        <div className="imgs center-between">
             {icons.map((icon, index) =>
                 <motion.div
                 initial={{opacity: 0, y: -300}}

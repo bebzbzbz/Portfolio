@@ -20,11 +20,13 @@ const Skillset = ({german} : SkillsetProps) => {
             <h2 className='stickyh2'>Skillset<a href="#hero" className='arrow' title='Back to top'>↑</a></h2>
             
             <div className='skills flex'>
-                <SingleSkill title='Tech Stack' skills={[["React.js", ""], ["TypeScript", ""], ["JavaScript", ""], ["HTML5", ""], ["SASS/SCSS", ""], ["CSS3", ""], ["Tailwind CSS", ""]]}/>
+                <SingleSkill title='Tech Stack' skills={[["React.js", ""], ["TypeScript", ""], ["JavaScript", ""], ["HTML5", ""], ["SASS/SCSS", ""], ["CSS3", ""], ["Tailwind CSS", ""], ["Supabase", ""]]}/>
 
-                <SingleSkill title='Design' skills={[["Photoshop", ""], ["InDesign", ""], ["Illustrator", ""], ["Premiere Pro", ""], ["Figma", ""]]}/>
+                <SingleSkill title='Design' skills={[["Canva", ""], ["Photoshop", ""], ["InDesign", ""], ["Illustrator", ""], ["Premiere Pro", ""], ["Figma", ""]]}/>
 
                 <SingleSkill title={german ? "Sprachen" : "Languages"} skills={german ? [["Deutsch", " — Muttersprache"], ["Englisch", " — C2"], ["Russisch", " — B2"], ["Französisch", " — B2"]] : [["German", " — Native Speaker"], ["English", " — C2"], ["Russian", " — B2"], ["French", " — B2"]]}/>                
+                
+                <SingleSkill title={german ? "In Aussicht" : "In the Future"} skills={[["Shopify", ""], ["Angular", ""], ["Wordpress", ""], ["Icecast", ""], ["Liquidsoap", ""], ["Vue.js", ""], ["React Native", ""]]}/>                
             </div>
             <SkillImgs containerRef={containerRef}/>
         </motion.section>
