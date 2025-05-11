@@ -10,7 +10,7 @@ interface SingleProjectProps {
     video: string
 }
 
-const SingleProject = ({title, text, githubLink, deployLink, video}: SingleProjectProps) => {
+const SingleProject = ({title, githubLink, deployLink, video}: SingleProjectProps) => {
     const isMobile = navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i)
 
     const videoEl = useRef<HTMLVideoElement>(null);
