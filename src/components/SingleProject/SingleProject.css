@@ -15,6 +15,12 @@
             width: 130%;
             object-fit: cover;
         }
+
+        .halftone {
+            position: absolute;
+            height: 100%;
+            width: 105%;
+        }
     }
     
     article {
@@ -68,9 +74,6 @@
             }
 
             .halftone {
-            position: absolute;
-            height: 100%;
-            width: 100%;
             filter: brightness(0.6) blur(.4px) contrast(15);
             /* transition: filter .4s ease; */
 
