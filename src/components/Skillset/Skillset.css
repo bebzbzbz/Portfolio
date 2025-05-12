@@ -1,16 +1,21 @@
 /* === SKILLSET === */
 #skillset {
     position: relative;
-    margin-bottom: 10rem;
+    margin-bottom: 5rem;
 
     .skills {
         flex-direction: column;
         padding-top: 7rem;
         justify-content: space-between;
         gap: 20dvh;
+
+        .imgs-wrapper {
+            gap: 5rem;
+        }
     }
     .imgs {
         display: none;
+        gap: 2vw;
         svg {
             height: clamp(90px, 7vw, 110px);
             cursor: pointer;
@@ -34,7 +39,6 @@
             margin-bottom: 15rem;
         }
         .imgs {
-            gap: unset;
             display: flex;
         } 
     }
