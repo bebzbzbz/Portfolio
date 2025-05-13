@@ -4,7 +4,7 @@
     color: var(--dark);
     align-items: center;
     justify-content: center;
-    padding-top: 1rem;
+    padding-top: 2.5rem;
     padding-inline: 0rem;
     margin-bottom: 15rem;
 
@@ -12,7 +12,7 @@
         font-size: clamp(3.6rem, 6vw, 7.5rem);
         line-height: 5rem;
         justify-content: space-between;
-        height: 82%;
+        height: 90%;
         width: 93%;
 
         >span {
@@ -55,27 +55,12 @@
             a {
                 text-align: center;
                 margin-top: -1rem;;
-                width: 10rem;
                 font-size: clamp(1.3rem, 1.8vw, 1.8rem);
                 line-height: 2.2rem;
                 transition: letter-spacing .3s ease;
                 text-transform: uppercase;
                 color: white;
-    
-                &:after {
-                    content: "";
-                    position: absolute;
-                    bottom: 0;
-                    display: block;
-                    height: 1px;
-                    width: 0%;
-                    background-color: white;
-                    transition: width .2s ease;
-                }
-    
-                &:hover:after {
-                    width: 100%;
-                }
+                padding: 1rem;
             }
         }
     }
@@ -99,6 +84,7 @@
 
 @media screen and (min-width: 1200px) {
     #hero {
+        padding-top: 1rem;
         h1 {
             text-align: center;
             line-height: 10rem;
@@ -108,10 +94,25 @@
         .star1 {
             top: -35dvh;
             right: -15dvh;
+        }
+        .link-wrapper {
+            a {
+                width: fit-content;
 
-            .link-wrapper {
-                a {
-                    width: fit-content;
+                &:after {
+                    content: "";
+                    position: absolute;
+                    bottom: .5rem;
+                    left: 1.5rem;
+                    display: block;
+                    height: 1px;
+                    width: 0%;
+                    background-color: white;
+                    transition: width .2s ease;
+                }
+
+                &:hover:after {
+                width: calc(100% - 3rem);
                 }
             }
         }

@@ -41,5 +41,9 @@ footer {
                 transition: width .6s ease;
             }
         }
+
+        ul a {
+            padding: .5rem 1rem;
+        }
     }
 }

@@ -8,7 +8,7 @@
             text-align: right;
 
             ul {
-                justify-self: flex-end;
+                justify-content: flex-end;
             }
         }
 
